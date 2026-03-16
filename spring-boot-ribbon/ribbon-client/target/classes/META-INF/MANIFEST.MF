@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: poorvapatel
+Build-Jdk: 21.0.8
+Implementation-Title: ribbon-client
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.example
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/ribbon-client
+Created-By: Maven Integration for Eclipse
+
