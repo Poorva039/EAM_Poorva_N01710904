@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Appointment Form</title>
+
+<link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+<body>
+
+<div class="header">
+Hospital Management System - Appointments
+</div>
+
+<div class="container">
+
+<h2 th:text="${pageTitle}"></h2>
+
+<form
+th:action="@{${actionUrl}}"
+th:object="${appointmentDTO}"
+method="post">
+
+<label>
+Appointment Number
+</label>
+
+<input
+type="text"
+th:field="*{appointmentNumber}">
+
+
+<label>
+Appointment Type
+</label>
+
+<input
+type="text"
+th:field="*{appointmentType}">
+
+
+<label>
+Appointment Date
+</label>
+
+<input
+type="date"
+th:field="*{appointmentDate}">
+
+
+<label>
+Description
+</label>
+
+<textarea
+th:field="*{description}">
+</textarea>
+
+
+
+<label>
+Select Patient
+</label>
+
+<select th:field="*{patientId}">
+
+<option value="">
+Select Patient
+</option>
+
+<option
+th:each="p:${patients}"
+th:value="${p.id}"
+th:text="${p.patientName}">
+</option>
+
+</select>
+
+
+
+<label>
+Select Doctor
+</label>
+
+<select th:field="*{doctorId}">
+
+<option value="">
+Select Doctor
+</option>
+
+<option
+th:each="d:${doctors}"
+th:value="${d.id}"
+th:text="${d.name}">
+</option>
+
+</select>
+
+
+<br>
+
+<button
+type="submit"
+class="btn">
+Save
+</button>
+
+
+<a
+th:href="@{/appointments}"
+class="btn">
+Back
+</a>
+
+
+</form>
+
+</div>
+
+</body>
+</html>

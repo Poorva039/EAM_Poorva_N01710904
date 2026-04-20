@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Patient List</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="header">
+    Hospital Management System - Patients
+</div>
+
+<div class="container">
+    <p>
+        <a th:href="@{/patients/new}" class="btn">Add Patient</a>
+    </p>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Username</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="p : ${patients}">
+            <td th:text="${p.id}"></td>
+            <td th:text="${p.patientName}"></td>
+            <td th:text="${p.mobile}"></td>
+            <td th:text="${p.email}"></td>
+            <td th:text="${p.address}"></td>
+            <td th:text="${p.username}"></td>
+            <td>
+                <a th:href="@{/patients/edit/{id}(id=${p.id})}" class="btn">Update</a>
+                <a th:href="@{/patients/delete/{id}(id=${p.id})}" class="btn">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

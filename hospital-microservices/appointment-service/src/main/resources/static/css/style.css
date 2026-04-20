@@ -1,0 +1,82 @@
+
+body{
+    font-family: Arial;
+    margin:0;
+    background:#f4f6fa;
+}
+
+/* HEADER */
+.header{
+    background:#16324f;
+    color:white;
+    padding:20px;
+    text-align:center;
+    font-size:26px;
+    font-weight:bold;
+}
+
+/* CONTAINER */
+.container{
+    width:90%;
+    margin:30px auto;
+}
+
+/* FORM CONTAINER */
+.form-container{
+    width:50%;
+    margin:30px auto;
+    background:white;
+    padding:25px;
+    border-radius:6px;
+}
+
+/* LABEL */
+label{
+    display:block;
+    margin-top:12px;
+    font-weight:bold;
+}
+
+/* INPUT */
+input,select,textarea{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border:1px solid #ccc;
+    border-radius:4px;
+}
+
+/* BUTTON */
+.btn{
+    background:#1d72b8;
+    color:white;
+    padding:10px 16px;
+    border:none;
+    text-decoration:none;
+    border-radius:4px;
+    cursor:pointer;
+    display:inline-block;
+    margin-top:15px;
+}
+
+/* TABLE */
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+}
+
+/* TABLE HEADER */
+th{
+    background:#16324f;
+    color:white;
+    padding:12px;
+    text-align:left;
+}
+
+/* TABLE DATA */
+td{
+    padding:10px;
+    border-bottom:1px solid #ddd;
+}
+

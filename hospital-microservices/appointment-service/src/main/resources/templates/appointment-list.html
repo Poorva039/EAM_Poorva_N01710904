@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Appointments</title>
+
+<link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+<body>
+
+<div class="header">
+Hospital Management System - Appointments
+</div>
+
+<div class="container">
+
+<p>
+<a th:href="@{/appointments/add}"
+class="btn">
+Add Appointment
+</a>
+</p>
+
+<table>
+
+<tr>
+<th>No</th>
+<th>Type</th>
+<th>Date</th>
+<th>Patient</th>
+<th>Doctor</th>
+<th>Description</th>
+<th>Actions</th>
+</tr>
+
+<tr th:each="a:${appointments}">
+
+<td th:text="${a.appointmentNumber}"></td>
+
+<td th:text="${a.appointmentType}"></td>
+
+<td th:text="${a.appointmentDate}"></td>
+
+<td th:text="${a.patientName}"></td>
+
+<td th:text="${a.doctorName}"></td>
+
+<td th:text="${a.description}"></td>
+
+<td>
+
+<a th:href="@{'/appointments/edit/'+${a.id}}"
+class="btn">
+Update
+</a>
+
+<a th:href="@{'/appointments/delete/'+${a.id}}"
+class="btn">
+Delete
+</a>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</body>
+</html>

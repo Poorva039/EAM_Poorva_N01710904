@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Doctor Form</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="header">Hospital Management System - Doctors</div>
+<div class="container">
+    <h2 th:text="${pageTitle}"></h2>
+
+    <form th:if="${doctorId == null}" th:action="@{/doctors/save}" th:object="${doctorDTO}" method="post">
+        <label>Name</label>
+        <input type="text" th:field="*{name}" required>
+
+        <label>Mobile</label>
+        <input type="text" th:field="*{mobile}" required>
+
+        <label>Email</label>
+        <input type="email" th:field="*{email}" required>
+
+        <label>Address</label>
+        <input type="text" th:field="*{address}" required>
+
+        <label>Specialization</label>
+        <input type="text" th:field="*{specialization}" required>
+
+        <label>Username</label>
+        <input type="text" th:field="*{username}" required>
+
+        <label>Password</label>
+        <input type="password" th:field="*{password}" required>
+
+        <button type="submit" class="btn">Save</button>
+        <a th:href="@{/doctors}" class="btn">Back</a>
+    </form>
+
+    <form th:if="${doctorId != null}" th:action="@{'/doctors/update/' + ${doctorId}}" th:object="${doctorDTO}" method="post">
+        <label>Name</label>
+        <input type="text" th:field="*{name}" required>
+
+        <label>Mobile</label>
+        <input type="text" th:field="*{mobile}" required>
+
+        <label>Email</label>
+        <input type="email" th:field="*{email}" required>
+
+        <label>Address</label>
+        <input type="text" th:field="*{address}" required>
+
+        <label>Specialization</label>
+        <input type="text" th:field="*{specialization}" required>
+
+        <label>Username</label>
+        <input type="text" th:field="*{username}" required>
+
+        <label>Password</label>
+        <input type="password" th:field="*{password}" required>
+
+        <button type="submit" class="btn">Update</button>
+        <a th:href="@{/doctors}" class="btn">Back</a>
+    </form>
+</div>
+</body>
+</html>
